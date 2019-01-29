@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+{% load static %}
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <title>Album example · Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="album.css" rel="stylesheet">
+  </head>
+  <body>
+<main role="main">
+
+  <section class="jumbotron text-center"  style='background-image:url({% static "bg1.jpg" %})'>
+    <div class="container">
+      <h1 class="jumbotron-heading">Hema Dasari</h1>
+      <p class="lead text-muted">Tech geek who loves to try out new technologies and very passionate to design , code and develop</p>
+      <p>
+        <a href="https://www.linkedin.com/in/hema-dasari/" class="btn btn-primary my-2">Find me on LinkedIn Here</a>
+        <a href="mailto:dasarihema95@gmail.com" class="btn btn-primary my-2">Email me</a>
+      </p>
+    </div>
+  </section>
+
+  <div class="album py-5 bg-light">
+    <div class="container">
+
+
+      <div class="row">
+{% for job in jobs.all %}
+        <div class="col-md-4">
+          <a href={% url 'detail' job.id %}>
+          <div class="card mb-4 shadow-sm">
+            <img class="card-img-top" src="{{ job.image.url }}" width="500" height="300" >
+            <div class="card-body">
+              <p class="card-text">{{ job.summary }}</p>
+            </div>
+          </div>
+          </a>
+        </div>
+{% endfor %}
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+</body>
+</html>
