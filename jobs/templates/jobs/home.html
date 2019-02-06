@@ -36,15 +36,16 @@
       }
     </style>
     <!-- Custom styles for this template -->
-    <link href="album.css" rel="stylesheet">
+    <link href={% static "album.css" %} rel="stylesheet">
   </head>
   <body>
+
 <main role="main">
 
   <section class="jumbotron text-center"  style='background-image:url({% static "bg1.jpg" %})'>
     <div class="container">
       <h1 class="jumbotron-heading">Hema Dasari</h1>
-      <p class="lead text-muted">Tech geek who loves to try out new technologies and very passionate to design , code and develop</p>
+      <p class="lead text-muted"><b>Tech geek who loves to try out new technologies and very passionate to design , code and develop</b></p>
       <p>
         <a href="https://www.linkedin.com/in/hema-dasari/" class="btn btn-primary my-2">Find me on LinkedIn Here</a>
         <a href="mailto:dasarihema95@gmail.com" class="btn btn-primary my-2">Email me</a>
@@ -54,8 +55,20 @@
 
   <div class="album py-5 bg-light">
     <div class="container">
+      <div class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-6" align="center"> HEY, GLAD YOU ARE HERE. A LITTLE ABOUT ME...<br><br>Young Software professional
+      having 2 years of Work experience with Cisco Systems and Akamai Technologies from Bangalore, India. Recently moved to Sydney, Australia, after marrying my deepest love.
+      And yes, a PR Candidate :) One who loves to make things happen and believe in effort and not fate. Positive vibed, inspire or get inspired with upbeat attitude. Forever grateful for the smallest things
+      that gives the joy for the soul. Embrace little things. Travel Enthusiast, Blogger, Badminton player, Yoga and Aerobics practitioner, Loves Gardening and Tune to slow music.<br>
+    Actively looking out for opportunities as Software Developer. Have a look into my <a href="bio"> CV</a> here for additional information on my technical Expertise and Experience.  </div>
+      <div class="col-md-3"></div>
+</div>
 
+<br><br><br>
 
+<h2 align="center"> My Projects </h1>
+  <br>
       <div class="row">
 {% for job in jobs.all %}
         <div class="col-md-4">

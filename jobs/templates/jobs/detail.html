@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+{% load static %}
   <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-133693645-1"></script>
@@ -32,6 +33,10 @@
           font-size: 3.5rem;
         }
       }
+      table, th, td {
+  border: 1px solid black;
+}
+
     </style>
     <!-- Custom styles for this template -->
     <link href="album.css" rel="stylesheet">
@@ -39,17 +44,58 @@
   <body>
 <main role="main">
 
-  <section class="jumbotron text-center">
+  <section class="jumbotron text-center"  style='background-image:url({% static "bg2.png" %})'>
     <div class="container">
-      <h1 class="jumbotron-heading">{{ job.name }}</h1>
-      <p class="lead text-muted">{{job.brief}}</p>
+      <h1 class="jumbotron-heading" style='color:white'>{{ job.name }}</h1>
+      <p class="lead" style='color:white'><b>{{job.brief}}</b></p>
       <p>
         <a href="{% url 'home' %}" class="btn btn-primary my-2">Home</a>
       </p>
     </div>
   </section>
 
-<img src="{{ job.image.url }}" style="margin-left:auto;margin-right:auto;display:block;width:50%">
+<!--<img src="{{ job.image.url }}" style="margin-left:auto;margin-right:auto;display:block;width:50%">-->
+<p> Here comes the Web stack - Tools & Technologies used to design and develop this..</p>
+
+<table style="width:50%;" align="center">
+  <tr>
+    <th><i>Web Stack</i></th>
+    <th><i>Tools/Technologies</i></th>
+  </tr>
+  <tr>
+    <td>OS</td>
+    <td>{{ job.OS }}</td>
+  </tr>
+  <tr>
+    <td>Client Side Technologies</td>
+    <td>{{ job.Client_technologies }}</td>
+  </tr>
+  <tr>
+    <td>Server Side technologies</td>
+    <td>{{ job.Server_technologies}}</td>
+  </tr>
+  <tr>
+    <td>Database Engine</td>
+    <td>{{job.db}}</td>
+  </tr>
+  <tr>
+    <td>Web server</td>
+    <td>{{ job.web_server}}</td>
+  </tr>
+  <tr>
+    <td>Framework/Platform</td>
+    <td>{{ job.framework}}</td>
+  </tr>
+  <tr>
+    <td>Host Engine</td>
+    <td>{{ job.host_engine }}</td>
+  </tr>
+  <tr>
+    <td>Version Control</td>
+    <td>{{ job.version_control}}</td>
+  </tr>
+
+</table>
 </main>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
