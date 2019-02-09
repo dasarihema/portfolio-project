@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'w0psit730xjz-r17%++!e4&40kab$9!jw5hgcb(--$@&s8wd%!'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['dasari-hema-portfolio.herokuapp.com',
                     'localhost']
